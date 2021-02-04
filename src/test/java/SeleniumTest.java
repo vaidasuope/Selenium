@@ -12,7 +12,6 @@ public class SeleniumTest {
     @Test
     public void searchByKeywordTest(){
         Selenium.searchByKeyword("Baranauskas");
-//        compareResultsTest();
         compareResultStringTest();
     }
 //sujungiam cia du testus i viena, nes jie priklauso labai visi nuo kito
