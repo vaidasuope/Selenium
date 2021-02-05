@@ -2,26 +2,31 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.OrderWith;
+
+
 
 public class SeleniumTest {
     @Before
-    public void dpBeforeTest(){
+    public void dpBeforeTest() {
         Selenium.setUp();
     }
 
     @Test
-    public void searchByKeywordTest(){
+
+    public void searchByKeywordTest() {
         Selenium.searchByKeyword("Baranauskas");
         compareResultStringTest();
     }
-//sujungiam cia du testus i viena, nes jie priklauso labai visi nuo kito
+
+    //sujungiam cia du testus i viena, nes jie priklauso labai visi nuo kito
 //
-    public void compareResultsNumberTest(){
+    public void compareResultsNumberTest() {
         int results = Selenium.compareResultsNumber();
         Assert.assertEquals(156000, results);
     }
 
-    public void compareResultStringTest(){
+    public void compareResultStringTest() {
         String results = Selenium.compareResultString();
         Assert.assertEquals("Results", results); // tas pats kas - results.equals("Results")
 
@@ -29,7 +34,7 @@ public class SeleniumTest {
     }
 
     @After
-    public void close(){
+    public void close() {
         Selenium.close();
     }
 
